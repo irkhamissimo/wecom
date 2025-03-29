@@ -1,5 +1,5 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
 /*
 | -------------------------------------------------------------------------
@@ -52,3 +52,5 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'halaman/tampil';
 $route['404_override'] = 'orang/nyasar';
 $route['translate_uri_dashes'] = TRUE;
+$route['register'] = 'user/register';
+$route['register/proses'] = 'user/prosesRegister';
