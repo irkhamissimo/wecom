@@ -30,7 +30,7 @@
 								'value' => set_value('nama_depan')
 							];
 							echo form_input($data);
-							echo form_error('nama_depan', '<div class="text-small text-danger">', '</div>');
+							echo form_error('nama_depan');
 							?>
 						</div>
 					</div>
@@ -47,7 +47,7 @@
 								'value' => set_value('nama_belakang')
 							];
 							echo form_input($data);
-							echo form_error('nama_belakang', '<div class="text-small text-danger">', '</div>');
+							echo form_error('nama_belakang');
 							?>
 						</div>
 					</div>
@@ -64,7 +64,7 @@
 								'value' => set_value('email')
 							];
 							echo form_input($data);
-							echo form_error('email', '<div class="text-small text-danger">', '</div>');
+							echo form_error('email');
 							?>
 						</div>
 					</div>
@@ -80,7 +80,7 @@
 								'value' => set_value('tanggal_lahir')
 							];
 							echo form_input($data);
-							echo form_error('tanggal_lahir', '<div class="text-small text-danger">', '</div>');
+							echo form_error('tanggal_lahir');
 							?>
 						</div>
 					</div>
@@ -96,7 +96,7 @@
 								'value' => set_value('alamat')
 							];
 							echo form_input($data);
-							echo form_error('alamat', '<div class="text-small text-danger">', '</div>');
+							echo form_error('alamat');
 							?>
 						</div>
 					</div>
@@ -113,7 +113,7 @@
 								'value' => set_value('telepon')
 							];
 							echo form_input($data);
-							echo form_error('telepon', '<div class="text-small text-danger">', '</div>');
+							echo form_error('telepon');
 							?>
 						</div>
 					</div>
@@ -129,7 +129,7 @@
 								'value' => set_value('hp')
 							];
 							echo form_input($data);
-							echo form_error('hp', '<div class="text-small text-danger">', '</div>');
+							echo form_error('hp');
 							?>
 						</div>
 					</div>
@@ -164,7 +164,7 @@
 									</label>
 								</div>
 							</div>
-							<?php echo form_error('jenis_kelamin', '<div class="text-small text-danger">', '</div>'); ?>
+							<?php echo form_error('jenis_kelamin'); ?>
 						</div>
 					</div>
 					<div class="form-group row">
@@ -178,7 +178,7 @@
 								'placeholder' => 'Password'
 							];
 							echo form_password($data);
-							echo form_error('password', '<div class="text-small text-danger">', '</div>');
+							echo form_error('password');
 							?>
 						</div>
 					</div>
@@ -193,7 +193,7 @@
 								'placeholder' => 'Konfirmasi Password'
 							];
 							echo form_password($data);
-							echo form_error('konfirmasi_password', '<div class="text-small text-danger">', '</div>');
+							echo form_error('konfirmasi_password');
 							?>
 						</div>
 					</div>
