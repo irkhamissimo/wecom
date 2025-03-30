@@ -16,8 +16,10 @@
 				<div class="card-header">Daftar Interview</div>
 
 				<div class="card-body">
-					<?php echo form_open(base_url('user/prosesRegister'), ['class' => 'form-weecom']); ?>
-					
+					<?php
+					echo form_open(base_url('user/prosesRegister'), ['class' => 'form-weecom']);
+					?>
+
 					<div class="form-group row">
 						<label for="nama_depan" class="col-3">Nama Depan</label>
 						<div class="col-9">
@@ -26,8 +28,8 @@
 								'name' => 'nama_depan',
 								'id' => 'nama_depan',
 								'class' => 'form-control',
+								'value' => set_value('nama_depan'),
 								'placeholder' => 'Nama Depan',
-								'value' => set_value('nama_depan')
 							];
 							echo form_input($data);
 							echo form_error('nama_depan');
@@ -43,8 +45,8 @@
 								'name' => 'nama_belakang',
 								'id' => 'nama_belakang',
 								'class' => 'form-control',
+								'value' => set_value('nama_belakang'),
 								'placeholder' => 'Nama Belakang',
-								'value' => set_value('nama_belakang')
 							];
 							echo form_input($data);
 							echo form_error('nama_belakang');
@@ -60,8 +62,8 @@
 								'name' => 'email',
 								'id' => 'email',
 								'class' => 'form-control',
+								'value' => set_value('email'),
 								'placeholder' => 'Email',
-								'value' => set_value('email')
 							];
 							echo form_input($data);
 							echo form_error('email');
@@ -69,18 +71,18 @@
 						</div>
 					</div>
 					<div class="form-group row">
-						<label for="tanggal_lahir" class="col-3">Tanggal Lahir</label>
+						<label for="dob" class="col-3">Tanggal Lahir</label>
 						<div class="col-9">
 							<?php
 							$data = [
-								'name' => 'tanggal_lahir',
+								'name' => 'dob',
 								'id' => 'dob',
 								'class' => 'form-control',
+								'value' => set_value('dob'),
 								'placeholder' => 'Tanggal Lahir',
-								'value' => set_value('tanggal_lahir')
 							];
 							echo form_input($data);
-							echo form_error('tanggal_lahir');
+							echo form_error('dob');
 							?>
 						</div>
 					</div>
@@ -92,8 +94,8 @@
 								'name' => 'alamat',
 								'id' => 'alamat',
 								'class' => 'form-control',
+								'value' => set_value('alamat'),
 								'placeholder' => 'Alamat',
-								'value' => set_value('alamat')
 							];
 							echo form_input($data);
 							echo form_error('alamat');
@@ -106,14 +108,14 @@
 						<div class="col-9">
 							<?php
 							$data = [
-								'name' => 'telepon',
-								'id' => 'telepon',
+								'name' => 'nomor_telepon',
+								'id' => 'nomor_telepon',
 								'class' => 'form-control',
+								'value' => set_value('nomor_telepon'),
 								'placeholder' => 'Masukkan nomor telepon Anda',
-								'value' => set_value('telepon')
 							];
 							echo form_input($data);
-							echo form_error('telepon');
+							echo form_error('nomor_telepon');
 							?>
 						</div>
 					</div>
@@ -122,14 +124,14 @@
 						<div class="col-9">
 							<?php
 							$data = [
-								'name' => 'hp',
-								'id' => 'hp',
+								'name' => 'nomor_hp',
+								'id' => 'nomor_hp',
 								'class' => 'form-control',
+								'value' => set_value('nomor_hp'),
 								'placeholder' => 'Masukkan nomor HP Anda',
-								'value' => set_value('hp')
 							];
 							echo form_input($data);
-							echo form_error('hp');
+							echo form_error('nomor_hp');
 							?>
 						</div>
 					</div>
