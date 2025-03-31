@@ -8,7 +8,6 @@ class User extends CI_Controller
 		$this->load->model('User_model');
 		$this->load->library('Password');
 
-
 		// Add custom validation rule for date
 		$this->form_validation->set_rules('valid_date', 'Valid Date', function ($str) {
 			return (bool)strtotime($str);
@@ -61,6 +60,8 @@ class User extends CI_Controller
 			];
 
 			$this->User_model->create($dataRegistrasi);
+			$dataPesan = ['pesan' => 'Akun Anda berhasil dibuat'];
+			$this->session->set_flashdata($dataPesan);
 			redirect('login');
 		}
 	}
@@ -72,5 +73,17 @@ class User extends CI_Controller
 		$this->load->view('template/header', $data);
 		$this->load->view('login', $data);
 		$this->load->view('template/footer', $data);
+	}
+
+	public function prosesLogin()
+	{
+		$this->form_validation->set_rules('email', 'Email', 'required|valid_email');
+		$this->form_validation->set_rules('password', 'Password', 'required|min_length[8]');
+
+		if ($this->form_validation->run() == FALSE) {
+			$this->login();
+		} else {
+			echo 'sukses login';
+		}
 	}
 }
