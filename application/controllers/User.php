@@ -102,6 +102,7 @@ class User extends CI_Controller
 				];
 
 				$this->session->set_userdata($dataLogin);
+				redirect('dashboard');
 			} else {
 				$dataPesan = [
 					'pesan' => 'Email atau password salah',
