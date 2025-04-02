@@ -86,10 +86,10 @@ class User extends CI_Controller
 
 			$email = $this->input->post('email');
 			$password = $this->input->post('password');
-			$passwordHash = $user->password ?? false;
+			// $passwordHash = $user->password ?? false;
 
 			$user = $this->User_model->login($email);
-			if ($this->password->verify($password, $passwordHash)) {
+			if (!empty($user->password) && $this->password->verify($password, $user->password)) {
 				echo 'Login berhasil';
 			} else {
 				echo 'Login gagal';
