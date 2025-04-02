@@ -60,7 +60,10 @@ class User extends CI_Controller
 			];
 
 			$this->User_model->create($dataRegistrasi);
-			$dataPesan = ['pesan' => 'Akun Anda berhasil dibuat'];
+			$dataPesan = [
+				'pesan' => 'Akun Anda berhasil dibuat',
+				'alert' => 'alert-success'
+			];
 			$this->session->set_flashdata($dataPesan);
 			redirect('login');
 		}
@@ -90,9 +93,22 @@ class User extends CI_Controller
 
 			$user = $this->User_model->login($email);
 			if (!empty($user->password) && $this->password->verify($password, $user->password)) {
-				echo 'Login berhasil';
+
+				$dataLogin = [
+					'logged_id' => TRUE,
+					'user_id' => $user->id,
+					'nama_depan' => $user->nama_depan,
+					'nama_belakang' => $user->nama_belakang,
+				];
+
+				$this->session->set_userdata($dataLogin);
 			} else {
-				echo 'Login gagal';
+				$dataPesan = [
+					'pesan' => 'Email atau password salah',
+					'alert' => 'alert-danger'
+				];
+				$this->session->set_flashdata($dataPesan);
+				$this->login();
 			}
 		}
 	}
