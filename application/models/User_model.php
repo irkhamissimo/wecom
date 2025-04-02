@@ -7,4 +7,15 @@ class User_model extends CI_Model
 
 		return $query;
 	}
+
+	public function login($email)
+	{
+		$query = $this->db->select('*')
+			->where('email', $email)
+			->get('karyawan');
+
+		$row = $query->row();
+
+		return $row;
+	}
 }
